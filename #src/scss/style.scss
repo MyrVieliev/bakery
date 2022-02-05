@@ -1,0 +1,94 @@
+@use 'sass:math';
+// === MIXINS ===
+@import './base/mixins';
+// === / MIXINS ===
+
+// === FONTS ===
+// @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Roboto&family=Rubik:wght@300;400;700&display=swap');
+@import './base/fonts';
+
+// === ICON FONTS ===
+@import './base/icons';
+// === / ICON FONTS ===
+
+// === DEFAULT FONTS ===
+$fontFamily: 'Rubik-Regular';
+$fontSize: 16;
+$Cookie-Regular: 'Cookie-Regular';
+$Rubik-Light: 'Rubik-Light';
+$Rubik-Medium: 'Rubik-Medium';
+$Rubik-Bold: 'Rubik-Bold';
+// === / DEFAULT FONTS ===
+//=== / FONTS ===
+
+// === VARIABLES ===
+$minWidth: 320px;
+$maxWidth: 1440;
+$containerPadding: 30;
+$maxWidthContainer: 1320 + $containerPadding;
+$pc: $maxWidthContainer;
+$tablet: 991.98;
+$mobile: 767.98;
+$mobileSmall: 479.98;
+
+$color-main: #412d22;
+$color-secondary: #e39a3b;
+$color-cream: #f1cc9d;
+$color-white: #fff;
+// === / VARIABLES ===
+
+// === RESET & MAIN PARAMETERS ===
+@import './base/null';
+body {
+	color: $color-main;
+
+	&._lock {
+		overflow: hidden;
+	}
+}
+// === / RESET & MAIN PARAMETERS ===
+
+// === WRAPPER ===
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+
+	.loaded & {
+	}
+	> main {
+		flex: 1 1 auto;
+	}
+	> * {
+		min-width: 0;
+	}
+}
+// === / WRAPPER ===
+
+// === CONTAINER ===
+._container {
+	max-width: $maxWidthContainer + px;
+	padding: 0px 15px;
+	margin: 0 auto;
+}
+// === / CONTAINER ===
+
+// === FORMS & UI STYLES ===
+@import './base/forms';
+@import './base/ui';
+// === / FORMS & UI STYLES ===
+
+// === ANOTHER PAGE STYLES ===
+//@import "pagging";
+@import './base/popup';
+@import 'header';
+@import 'footer';
+@import 'home';
+// === / ANOTHER PAGE STYLES ===
+
+// === PAGE ===
+.page {
+	flex: 1 1 auto;
+}
+// === / PAGE ===

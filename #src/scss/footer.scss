@@ -1,0 +1,111 @@
+// === FOOTER ===
+@use 'sass:math';
+
+.footer {
+	color: $color-white;
+
+	&-wrapper {
+		background-color: $color-main;
+	}
+
+	&-body {
+		padding-top: 50px;
+
+		@media (min-width: ($mobile+px)) {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		@media (max-width: ($mobile+px)) {
+			align-items: baseline;
+		}
+	}
+}
+.fmenu {
+	padding-top: 20px;
+
+	&__body {
+		color: $color-white;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+
+		@media (max-width: ($mobile+px)) {
+			flex-direction: column;
+			padding-left: 20px;
+			padding-top: 20px;
+		}
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 0px 3px;
+		padding: 5px 10px;
+		position: relative;
+
+		a {
+			color: $color-white;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				.fmenu__link {
+					color: $color-secondary;
+				}
+			}
+		}
+
+		@media (min-width: ($mobile+px)) {
+			&._hover {
+				.fmenu__link {
+					color: $color-secondary;
+				}
+			}
+		}
+
+		@media (max-width: ($mobile+px)) {
+			margin: 15px 0px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__link {
+		font-size: 16px;
+		font-weight: 400;
+		color: inherit;
+		transition: color 0.3s ease 0s;
+
+		@media (max-width: ($mobile+px)) {
+			font-size: 20px;
+			font-weight: 400;
+			color: $color-main;
+		}
+	}
+}
+
+.social_networks {
+	@media (max-width: ($mobile+px)) {
+		flex-direction: row;
+	}
+}
+
+.copy {
+	display: flex;
+	justify-content: center;
+	font-family: 'Roboto';
+	font-size: 12px;
+	padding-top: 15px;
+	padding-bottom: 20px;
+
+	&__item {
+		padding: 0 10px;
+	}
+}
+// === / FOOTER ===
